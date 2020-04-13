@@ -6,7 +6,10 @@ import { POSTER_SIZE, IMAGE_BASE_URL } from "../../Api/moviedb";
 
 const ImageSlide = (props) => {
   return (
-    <Carousel autoplay>
+    <div className='container'> 
+    <Carousel 
+      autoplay
+    >
         {props.data.map(datas => (
           <img 
             key = {datas.id}
@@ -15,7 +18,8 @@ const ImageSlide = (props) => {
           />
         ))}
     </Carousel>
-  );
+    </div>  
+  )
 };
 
 export default ImageSlide;

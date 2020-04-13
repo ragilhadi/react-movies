@@ -3,6 +3,7 @@ import TopNav from './components/header/TopNav';
 import ImageSlide from './components/imageSlider/ImageSlide';
 import ItemCard from './components/itemCard/ItemCard';
 import { API_URL, API_KEY } from './Api/moviedb';
+import PageTittle from './components/pageHeader/PageTittle';
 
 class App extends Component {
   state = {
@@ -35,8 +36,17 @@ class App extends Component {
     <div className="App">
       <TopNav />
       <div style={{ margin: '0 150px'}}>
-      <ImageSlide data={this.state.nowPlaying}/>
-      <ItemCard />
+
+        <PageTittle />
+
+        <ImageSlide 
+          data={this.state.nowPlaying}
+        />
+
+        <PageTittle />
+
+        <ItemCard />
+        <PageTittle />
       </div>
     </div>
   )
