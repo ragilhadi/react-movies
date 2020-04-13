@@ -2,22 +2,18 @@ import React from "react";
 import { Carousel } from "antd";
 import 'antd/dist/antd.css';
 import './ImageSlide.scss'
+import { POSTER_SIZE, IMAGE_BASE_URL } from "../../Api/moviedb";
 
 const ImageSlide = (props) => {
   return (
     <Carousel autoplay>
-      <div>
-        <h3>1</h3>
-      </div>
-      <div>
-        <h3>2</h3>
-      </div>
-      <div>
-        <h3>3</h3>
-      </div>
-      <div>
-        <h3>4</h3>
-      </div>
+        {props.data.map(datas => (
+          <img 
+            key = {datas.id}
+            src = {`${IMAGE_BASE_URL}${POSTER_SIZE}${datas.backdrop_path}`}
+            alt = 'IMAGES'
+          />
+        ))}
     </Carousel>
   );
 };
