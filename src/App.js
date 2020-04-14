@@ -4,11 +4,13 @@ import ImageSlide from './components/imageSlider/ImageSlide';
 import ItemCard from './components/itemCard/ItemCard';
 import { API_URL, API_KEY } from './Api/moviedb';
 import PageTittle from './components/pageHeader/PageTittle';
+import GridCard from './components/gridCard/GridCard';
 
 class App extends Component {
   state = {
     movies: [],
     nowPlaying: [],
+    popular: [],
     currentPage: 0,
     totalPage: 0,
     searchTerm: '',
@@ -18,15 +20,26 @@ class App extends Component {
     const PopularMovie = `${API_URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
     const NowPlayingMovie = `${API_URL}/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
     const UpComingMovie = `${API_URL}/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
-    this.fetchData(NowPlayingMovie)
+    this.fetchDataNowPlaying(NowPlayingMovie)
+    this.fetchDataPopular(PopularMovie)
   }
 
-  fetchData = (respone) => {
+  fetchDataNowPlaying = (respone) => {
     fetch(respone)
     .then(result => result.json())
     .then(result => {
       this.setState({
         nowPlaying: [...this.state.nowPlaying, ...result.results]
+      })
+    })
+  }
+
+  fetchDataPopular = (respone) => {
+    fetch(respone)
+    .then(result => result.json())
+    .then(result => {
+      this.setState({
+        popular: [...this.state.popular, ...result.results]
       })
     })
   }
@@ -45,7 +58,9 @@ class App extends Component {
 
         <PageTittle />
 
-        <ItemCard />
+        <GridCard 
+          data={this.state.popular}
+        />
         <PageTittle />
       </div>
     </div>

@@ -2,6 +2,7 @@ import React from "react";
 import "antd/dist/antd.css";
 // import './index.css';
 import { Card } from "antd";
+import { POSTER_SIZE, IMAGE_BASE_URL } from "../../Api/moviedb"
 
 const { Meta } = Card;
 
@@ -13,11 +14,11 @@ const ItemCard = (props) => {
       cover={
         <img
           alt="example"
-          src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+          src={`${IMAGE_BASE_URL}${POSTER_SIZE}${props.poster}`}
         />
       }
     >
-      <Meta title="Europe Street beat" description="www.instagram.com" />
+      <Meta title={props.tittle} description={props.score} />
     </Card>
   );
 };
