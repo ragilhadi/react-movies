@@ -8,7 +8,7 @@ const { Header } = Layout;
 const TopNav  = () => {
   return (
     <Layout>
-      <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
+      <Header style={{ position: "fixed", zIndex: 1, width: "100%", padding: '0 150px' }}>
         <div className="logo" />
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
           <Menu.Item key="1">nav 1</Menu.Item>

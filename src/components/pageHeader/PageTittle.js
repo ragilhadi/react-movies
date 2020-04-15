@@ -2,13 +2,13 @@ import React from 'react'
 import { PageHeader } from "antd";
 import './PageTittle.scss'
 
-const PageTittle = () => {
+const PageTittle = (props) => {
     return (
         <div className='container'>
         <PageHeader
             className="site-page-header"
-            title="Title"
-            subTitle="This is a subtitle"
+            title={props.tittle}
+            subTitle={props.subtittle}
         />
         </div>
     )

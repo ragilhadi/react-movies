@@ -4,7 +4,7 @@ import ItemCard from '../itemCard/ItemCard'
 
 const GridCard = props => {
     return (
-        <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+        <Row gutter={[32, 32]}>
             {props.data.map(datas => (
                 <Col lg={6} md={8} xs={24}>
                     <ItemCard 
