@@ -3,9 +3,8 @@ import TopNav from './components/header/TopNav';
 import ImageSlide from './components/imageSlider/ImageSlide';
 import { API_URL, API_KEY } from './Api/moviedb';
 import PageTittle from './components/pageHeader/PageTittle';
-import GridCard from './components/gridCard/GridCard';
-import ButtonIcon from './components/buttonIcon/ButtonIcon';
 import ContainerMovies from './components/containerMovie/ContainerMovies';
+import './App.scss'
 
 class App extends Component {
   state = {
@@ -72,7 +71,7 @@ class App extends Component {
 
   render(){
   return (
-    <div className="App">
+    <div className="Appa">
       <TopNav />
       <div style={{ margin: '0 150px'}}>
 
@@ -107,38 +106,6 @@ class App extends Component {
           button='See More'
         />
 
-
-
-        {/* <PageTittle 
-            tittle='Movies'
-            subtittle="Popular"
-        />
-
-        <GridCard 
-          data={this.state.popular}
-        />
-
-        <ButtonIcon
-          name='Show More'
-        />
-
-        <PageTittle 
-          tittle='Movies'
-          subtittle="Up Coming"
-        />
-
-        <GridCard 
-          data={this.state.upComing}
-        />
-
-        <PageTittle 
-          tittle='Movies'
-          subtittle="Top Rated"
-        />
-
-        <GridCard 
-          data={this.state.topRated}
-        /> */}
       </div>
     </div>
   )
