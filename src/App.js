@@ -11,7 +11,7 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter basename='/'>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <React.Fragment>
           <TopNav />
           <Switch>
