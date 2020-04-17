@@ -3,6 +3,7 @@ import PageTittle from '../../components/pageHeader/PageTittle';
 import ImageSlide from '../../components/imageSlider/ImageSlide';
 import ContainerMovies from '../../components/containerMovie/ContainerMovies'
 import { API_URL, API_KEY } from '../../Api/moviedb';
+import { Skeleton } from 'antd';
 
 class Home extends Component {
   state = {
@@ -70,35 +71,46 @@ class Home extends Component {
     return (
         <div style={{ margin: '0 150px'}}>
 
-        <PageTittle 
-          tittle='Movies'
-          subtittle="Now Playing"
-        />
+          {this.state.nowPlaying.length === 0 ? 
+            <div style={{marginTop: '150px'}}>
+              <Skeleton active />
+              <Skeleton active />
+            </div>
+            :
+            <>
+            <PageTittle 
+              tittle='Movies'
+              subtittle="Now Playing"
+            />
 
-        <ImageSlide 
-          data={this.state.nowPlaying}
-        />
+            <ImageSlide 
+              data={this.state.nowPlaying}
+            />
 
-        <ContainerMovies
-          tittle='Movies'
-          subtittle='Popular'
-          data={this.state.popular}
-          button='See More'
-        />
+            <ContainerMovies
+              tittle='Movies'
+              subtittle='Popular'
+              data={this.state.popular}
+              button='See More'
+            />
 
-        <ContainerMovies
-          tittle='Movies'
-          subtittle='Up Coming'
-          data={this.state.upComing}
-          button='See More'
-        />
+            <ContainerMovies
+              tittle='Movies'
+              subtittle='Up Coming'
+              data={this.state.upComing}
+              button='See More'
+            />
 
-        <ContainerMovies
-          tittle='Movies'
-          subtittle='Top Rated'
-          data={this.state.topRated}
-          button='See More'
-        />
+            <ContainerMovies
+              tittle='Movies'
+              subtittle='Top Rated'
+              data={this.state.topRated}
+              button='See More'
+            />
+            </>
+          }
+
+        
 
       </div>
     )
