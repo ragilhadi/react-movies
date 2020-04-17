@@ -8,11 +8,10 @@ import NotFound from "./View/NotFound/NotFound";
 
 class App extends Component {
 
-  APP_URL = 'http://ragilhadi.github.io/react-movies'
 
   render() {
     return (
-      <BrowserRouter basename={`${process.env.PUBLIC_URL}/`}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <React.Fragment>
           <TopNav />
           <Switch>
