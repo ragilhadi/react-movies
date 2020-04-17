@@ -12,7 +12,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter basename={`${process.env.APP_URL}/`}>
+      <BrowserRouter basename={`${process.env.PUBLIC_URL}/`}>
         <React.Fragment>
           <TopNav />
           <Switch>
