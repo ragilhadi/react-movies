@@ -19,7 +19,8 @@ const TopNav = () => {
           padding: "0 150px",
         }}
       >
-        <div className="logo" />
+        {/* <div className="logo">
+        </div> */}
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
           <Menu.Item key="1">
             <Link to="/">
@@ -29,16 +30,15 @@ const TopNav = () => {
           </Menu.Item>
           <Menu.Item key="2">
             <AutoComplete
-              dropdownMatchSelectWidth={252}
-              style={{
-                width: 300,
-              }}
               // options={options}
+              style={{
+                width: 200,
+                justifyContent: 'flex-end'
+              }}
               // onSelect={onSelect}
-              // onSearch={handleSearch}
-            >
-              <Input.Search size="large" placeholder="input here" enterButton />
-            </AutoComplete>
+              // onSearch={onSearch}
+              placeholder="Search..."
+            />
           </Menu.Item>
           <Menu.Item key="3">
             <ReactLogo />
