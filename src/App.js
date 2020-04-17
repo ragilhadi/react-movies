@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TopNav from "./components/header/TopNav";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch, HashRouter } from "react-router-dom";
 import "./App.scss";
 import Home from "./View/Home/Home";
 import Movie from "./View/Movie/Movie";
@@ -11,7 +11,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter basename='/'>
+      <HashRouter basename='/'>
         <React.Fragment>
           <TopNav />
           <Switch>
@@ -20,7 +20,7 @@ class App extends Component {
             <Route component={NotFound} />
           </Switch>
         </React.Fragment>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
