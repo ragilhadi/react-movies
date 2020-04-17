@@ -3,7 +3,6 @@ import "antd/dist/antd.css";
 import "./TopNav.scss";
 import { Layout, Menu, AutoComplete, Input } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
-import { ReactComponent as ReactLogo } from "../../images/logo_horizontal.svg";
 import { Link } from "react-router-dom";
 
 const { Header } = Layout;
@@ -41,7 +40,6 @@ const TopNav = () => {
             />
           </Menu.Item>
           <Menu.Item key="3">
-            <ReactLogo />
           </Menu.Item>
         </Menu>
       </Header>
